@@ -2,6 +2,7 @@ package com.mirea.work_6;
 
 import java.util.Comparator;
 
+// класс - компаратор, с помощью которого осуществляются сортировки
 public class SortingByGPA implements Comparator<Student> {
 
     @Override
