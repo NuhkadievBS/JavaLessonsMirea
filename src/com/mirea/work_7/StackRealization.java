@@ -1,10 +1,15 @@
 package com.mirea.work_7;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
 import java.util.Scanner;
 import java.util.Stack;
 
 public class StackRealization {
     public static void main(String[] args) {
+        //Реализация алгоритма на всех структурах аналогична: Если в первой колоде верхний элемент больше,
+        // то оба элемента идут в начало первой колоды
+
         Scanner scanner = new Scanner(System.in);
         Stack<Integer> firstHand = new Stack<>();
         Stack<Integer> secondHand = new Stack<>();
@@ -16,7 +21,9 @@ public class StackRealization {
             secondHand.push(scanner.nextInt());
         }
 
-        int count = 0;
+        int count = 0; // Счетчик ходов
+
+        // Пока кол-во ходов меньше 106 и ни одна из колод не пустая
         while (count < 106  && !firstHand.isEmpty() && !secondHand.isEmpty()) {
             Integer val1 = firstHand.pop();
             Integer val2 = secondHand.pop();
@@ -36,10 +43,14 @@ public class StackRealization {
                 secondHand.add(0, val2);
                 secondHand.add(0, val1);
             }
-
+            printOut(firstHand);
+            printOut(secondHand);
+            System.out.println('\n');
             count++;
         }
-        if(count == 106)
+
+        // Выигрывает тот игрок, чья колода НЕ пустая
+        if(count == 106) // Если кол-во ходов достигло 106, то выводим botva
             System.out.println("botva");
         else if(firstHand.isEmpty()) {
             System.out.println("second " + count);
@@ -47,5 +58,14 @@ public class StackRealization {
         else {
             System.out.println("first " + count);
         }
+    }
+
+    private static void printOut(Stack<Integer> hand) {
+        String res = "[ ";
+        for(Object x: hand)
+            res += x.toString() + ", ";
+        res = res.substring(0, res.length() - 2);
+        System.out.println(res + " ]");
+
     }
 }
