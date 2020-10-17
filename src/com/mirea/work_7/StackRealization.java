@@ -5,7 +5,6 @@ import java.util.Stack;
 
 public class StackRealization {
     public static void main(String[] args) {
-        //Redo stack
         Scanner scanner = new Scanner(System.in);
         Stack<Integer> firstHand = new Stack<>();
         Stack<Integer> secondHand = new Stack<>();
@@ -48,8 +47,5 @@ public class StackRealization {
         else {
             System.out.println("first " + count);
         }
-    }
-    public static Stack<Integer> pushBack(Stack<Integer> hand, Integer val1) {
-        return null;
     }
 }
