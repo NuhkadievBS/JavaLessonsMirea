@@ -1,10 +1,21 @@
 package com.mirea.work_8;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-public abstract class WaitList <E extends Comparable<E>> implements IWaitList<E> {
+/**
+ * Класс реализовывает интерфейс IWaitList {@link IWaitList}
+ * и является базовым для классов {@link UnfairWaitList}, {@link BoundedWaitList}.
+ * Список ожидания, базированный на очереди {@link ConcurrentLinkedQueue}
+ * Список ожидания работает по принципу FIFO (first-in-first-out).
+ * Логика реализована в соответствии с этим принципом: {@code add}, {@code remove}
+ *
+ * В классе реализованы некоторые методы, присущие Java коллекциям:
+ * {@code toString}, {@code contains}, {@code isEmpty}, {@code containsAll}
+ *
+ * @param <E> тип элементов, содержащихся в списке
+ */
+public class WaitList <E extends Comparable<E>> implements IWaitList<E> {
     protected ConcurrentLinkedQueue<E> content;
 
     public WaitList() { content = new ConcurrentLinkedQueue<>(); }
@@ -30,31 +41,23 @@ public abstract class WaitList <E extends Comparable<E>> implements IWaitList<E>
     }
 
     @Override
-    public Object remove() {
-        return null;
+    public E remove() {
+        return content.poll();
     }
 
     @Override
     public boolean contains(E element) {
-        return false;
+        return content.contains(element);
     }
 
     @Override
     public boolean containsAll(ArrayList<E> c) {
-        return false;
+        return content.containsAll(c);
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return content.isEmpty();
     }
 
-    public static void main(String[] args) {
-        ConcurrentLinkedQueue<Integer> queue = new ConcurrentLinkedQueue<>();
-        queue.add(5);
-        queue.add(76);
-        queue.add(54);
-        queue.add(33);
-        queue.add(6);
-    }
 }
