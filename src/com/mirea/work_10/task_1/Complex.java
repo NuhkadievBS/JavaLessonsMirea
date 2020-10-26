@@ -1,5 +1,8 @@
 package com.mirea.work_10.task_1;
 
+/**
+ * Класс Complex реализует логику комплексных чисел
+ */
 public class Complex {
     private int real;
     private int image;

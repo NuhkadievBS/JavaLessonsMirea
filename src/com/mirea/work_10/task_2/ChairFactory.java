@@ -1,6 +1,13 @@
 package com.mirea.work_10.task_2;
 
-public class ChairFactory implements AbstractChairFactory{
+
+/**
+ * Класс Фабрики стульев, может создавать стулья трех видов:
+ * Викторианский стул {@link VictorianChair}
+ * Функциональный стул {@link FunctionalChair}
+ * Магический стул {@link MagicChair}
+ */
+public class ChairFactory implements AbstractChairFactory {
 
     @Override
     public VictorianChair createVictorianChair(int age) {

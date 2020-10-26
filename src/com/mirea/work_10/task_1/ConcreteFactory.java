@@ -1,5 +1,8 @@
 package com.mirea.work_10.task_1;
 
+/**
+ * Класс реализующий конкретную фабрику, создающую комплексные числа
+ */
 public class ConcreteFactory implements ComplexJavaFactory {
 
     @Override

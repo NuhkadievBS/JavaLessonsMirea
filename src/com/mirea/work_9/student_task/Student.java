@@ -1,5 +1,8 @@
 package com.mirea.work_9.student_task;
 
+/**
+ * Класс реализует логику студента. У студента есть имя и средний балл.
+ */
 public class Student {
     private final String name;
     private final Double GPA;
