@@ -5,8 +5,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
+ *
  * Класс интерфейса приложения. По сути это лишь меню файла. Сигналы о выполнении действий выводятся на консоль,
  * Поэтому рекомендуется наблюдать за консолью во время проверки программы.
+ *
  */
 public class FrameUI extends JFrame {
 
