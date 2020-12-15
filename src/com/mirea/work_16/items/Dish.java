@@ -1,12 +1,25 @@
-package com.mirea.work_16;
+package com.mirea.work_16.items;
 
-public final class Dish implements Item{
+public final class Dish extends Item {
     private Double cost;
     private String name;
     private String description;
 
+
+    public Dish(String name, String description) {
+        this.name = name;
+        this.description = description;
+        this.cost = 0.0;
+    }
+
+    public Dish(Double cost, String name, String description) {
+        this.cost = cost;
+        this.name = name;
+        this.description = description;
+    }
+
     @Override
-    public Double getCost() {
+    public int getCost() {
         return cost;
     }
 
